@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wiki Location Mark Tool</title>
+        <script src="./code.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <select id="sl_lv6type">
+                        <option value="huyện">Huyện</option>
+                        <option value="thành phố">Thành phố</option>
+                        <option value="thị xã">Thị xã</option>
+                        <option value="quận">Quận</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" id="txt_lv6name" style="width:150px;">
+                </td>
+                <td>
+                    <select id="sl_lv4type">
+                        <option value="tỉnh">Tỉnh</option>
+                        <option value="thành phố">Thành phố</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" id="txt_lv4name" style="width:100%;">
+                </td>
+            </tr>
+            <tr>
+                <td>Map width: </td>
+                <td>
+                    <input type="number" id="txt_mapwidth" style="width:150px;" value="450" min="0">
+                </td>
+                <td>Image width: </td>
+                <td>
+                    <input type="number" id="txt_imagewidth" style="width:100%;" value="3000" min="0">
+                </td>
+            </tr>
+            <tr>
+                <td>Image name: </td>
+                <td>
+                    <input type="text" id="txt_imagename" style="width:150px;">
+                </td>
+                <td colspan="2">
+                    <input type="button" value="Reset above information" 
+                    onclick="btt_resetabove_click()">
+                </td>
+            </tr>
+            <!--<tr>
+                <td colspan="4">
+                    <b>Counter type 1: <label id="t1_counter">0</label>, 
+                    type 2: <label id="t2_counter">0</label>,
+                    type 3: <label id="t3_counter">0</label>,
+                    type 0: <label id="t0_counter">0</label>.</b>
+                    <br>
+                    + type 1, + type 2, + type 3: nếu ô huyện/quận trống thì<br>
+                    type 1 là thêm Thành phố/Quận, 2 là thêm Thị xã, 3 là thêm Huyện.<br>
+                    Nếu ô huyện/quận không trống thì<br>
+                    type 1 là thêm Phường, 2 là thêm Thị trấn, 3 là thêm Xã.<br>
+                    + type 0: dành cho các mục địa danh lân cận.
+                </td>
+            </tr>-->
+            <tr>
+                <td>
+                    Wiki link <br>code:
+                </td>
+                <td colspan="3">
+                    <textarea id="txt_wikilink" rows="6" style="width: 100%;"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: left;">
+                    <input type="button" id="btt_addsubitem" value="+1 sub-item"
+                    onclick="btt_addsubitem_click()">
+                    <input type="button" id="btt_generate" value="Generate code"
+                    onclick="btt_generate_click()">
+                    <input type="button" id="btt_reset" value="Reset all items" 
+                    onclick="btt_reset_click()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div id="subitem_list"></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div id="wiki_code"></div>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
